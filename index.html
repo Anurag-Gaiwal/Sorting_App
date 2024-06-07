@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title> String Sorting App by Anurag Gaiwal </title>
+	<style>
+		*{font-size:50px}
+		body{background-color: lightblue}
+	</style>
+</head>
+
+<body>
+<center>
+	<h1>Word Sorting App</h1>
+	<form onsubmit="sort()">
+		<input type="text" placeholder="Enter Your Word" id="str"/>
+		<br/> <br/>
+		<input type="submit" value="Sort"/>
+	</form>
+	<h2 id="msg"></h2>
+	<script>
+		function sort(){
+			event.preventDefault();
+			let str = document.getElementById("str");
+			let msg = document.getElementById("msg");
+
+			if(str.value.trim() == ""){
+				alert("Input cannot be empty or blank spaces");
+				msg.innerHTML = "";
+				str.focus()
+				return;
+			}
+
+			let s = str.value;
+			let sortedStr = s.split("").sort().join("");
+			msg.innerHTML = "After Sorting : " + sortedStr;
+		}	
+	</script>
+</center>
+</body>
+</html>
